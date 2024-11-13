@@ -1,0 +1,76 @@
+@mixin styled-ul($width: 576px, $theme-color: var(--theme-color-primary)) {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  justify-content: space-between;
+  letter-spacing: 1.5px;
+  line-height: normal;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: $width;
+
+  li {
+    display: inline-block;
+
+    a {
+      color: $theme-color;
+      display: inline-block;
+      font-weight: lighter;
+      letter-spacing: 1.4px;
+      position: relative;
+      text-decoration: none;
+
+      &.active-menu::after {
+        border-bottom: 2px solid var(--theme-color-primary);
+        content: " ";
+        height: 2px;
+        left: 0px;
+        position: absolute;
+        top: 30px;
+        width: 17px;
+      }
+    }
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+
+  .left-col {
+    border-right: 2px solid var(--theme-color-primary);
+
+    img {
+      height: 37px;
+      margin: 25px 32px 0 36px;
+      width: 37px;
+    }
+  }
+
+  .nav-menu {
+    color: var(--theme-color-primary);
+    flex-grow: 2;
+    margin: 44px 0 0 67px;
+
+    ul {
+      @include styled-ul();
+    }
+  }
+
+  .locales-menu {
+    margin: 45px 94px 0 0;
+
+    ul {
+      @include styled-ul(67px);
+    }
+  }
+}

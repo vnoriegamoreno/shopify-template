@@ -1,0 +1,64 @@
+.hero {
+  background-image: url('./tennis-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+
+  .grid-layout {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 225px minmax(auto, max-content) auto;
+    grid-template-columns: 173px auto;
+
+    .title {
+      color: var(--theme-color-primary);
+      font-size: 53px;
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: normal;
+      grid-column: 2;
+      grid-row: 2;
+      letter-spacing: -0.05px;
+      line-height: 1.28;
+      margin: 0;
+      padding: 0;
+      width: 709px;
+
+      strong {
+        color: var(--theme-color-secondary);
+        font-weight: 800;
+      }
+    }
+
+    .aboutus-btn {
+      grid-column: 2;
+      grid-row: 3;
+      margin: 0;
+      padding: 0;
+
+      a {
+        border-radius: 26.5px;
+        border: solid 1px var(--theme-color-primary);
+        color: var(--theme-color-primary);
+        display: inline-block;
+        font-size: 16px;
+        padding: 15px 50px 15px 30px;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        top: 30px;
+
+        .svg-left-arrow {
+          height: 23px;
+          position: absolute;
+          top: 12.5px;
+          width: 23px;
+          right: 22px;
+        }
+      }
+    }
+  }
+}

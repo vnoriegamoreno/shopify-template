@@ -1,0 +1,169 @@
+@import url("https://fonts.cdnfonts.com/css/helvetica-neue-55?styles=16008");
+body, html {
+  margin: 0px;
+  padding: 0px;
+}
+
+* {
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --theme-color-primary: #fff;
+  --theme-color-secondary: #cbe346;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+}
+header .left-col {
+  border-right: 2px solid var(--theme-color-primary);
+}
+header .left-col img {
+  height: 37px;
+  margin: 25px 32px 0 36px;
+  width: 37px;
+}
+header .nav-menu {
+  color: var(--theme-color-primary);
+  flex-grow: 2;
+  margin: 44px 0 0 67px;
+}
+header .nav-menu ul {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  justify-content: space-between;
+  letter-spacing: 1.5px;
+  line-height: normal;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 576px;
+}
+header .nav-menu ul li {
+  display: inline-block;
+}
+header .nav-menu ul li a {
+  color: var(--theme-color-primary);
+  display: inline-block;
+  font-weight: lighter;
+  letter-spacing: 1.4px;
+  position: relative;
+  text-decoration: none;
+}
+header .nav-menu ul li a.active-menu::after {
+  border-bottom: 2px solid var(--theme-color-primary);
+  content: " ";
+  height: 2px;
+  left: 0px;
+  position: absolute;
+  top: 30px;
+  width: 17px;
+}
+header .locales-menu {
+  margin: 45px 94px 0 0;
+}
+header .locales-menu ul {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  justify-content: space-between;
+  letter-spacing: 1.5px;
+  line-height: normal;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 67px;
+}
+header .locales-menu ul li {
+  display: inline-block;
+}
+header .locales-menu ul li a {
+  color: var(--theme-color-primary);
+  display: inline-block;
+  font-weight: lighter;
+  letter-spacing: 1.4px;
+  position: relative;
+  text-decoration: none;
+}
+header .locales-menu ul li a.active-menu::after {
+  border-bottom: 2px solid var(--theme-color-primary);
+  content: " ";
+  height: 2px;
+  left: 0px;
+  position: absolute;
+  top: 30px;
+  width: 17px;
+}
+
+.hero {
+  background-image: url("./tennis-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+.hero .grid-layout {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 225px minmax(auto, max-content) auto;
+  grid-template-columns: 173px auto;
+}
+.hero .grid-layout .title {
+  color: var(--theme-color-primary);
+  font-size: 53px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  grid-column: 2;
+  grid-row: 2;
+  letter-spacing: -0.05px;
+  line-height: 1.28;
+  margin: 0;
+  padding: 0;
+  width: 709px;
+}
+.hero .grid-layout .title strong {
+  color: var(--theme-color-secondary);
+  font-weight: 800;
+}
+.hero .grid-layout .aboutus-btn {
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0;
+  padding: 0;
+}
+.hero .grid-layout .aboutus-btn a {
+  border-radius: 26.5px;
+  border: solid 1px var(--theme-color-primary);
+  color: var(--theme-color-primary);
+  display: inline-block;
+  font-size: 16px;
+  padding: 15px 50px 15px 30px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  top: 30px;
+}
+.hero .grid-layout .aboutus-btn a .svg-left-arrow {
+  height: 23px;
+  position: absolute;
+  top: 12.5px;
+  width: 23px;
+  right: 22px;
+}
