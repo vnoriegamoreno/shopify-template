@@ -1,0 +1,17 @@
+{
+  "name": "tennis-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss:build": "sass scss/main.scss assets/application.css --no-source-map",
+    "scss:watch": "sass --watch scss/main.scss:assets/application.css --no-source-map",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.80.7"
+  }
+}
