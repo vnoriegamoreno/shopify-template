@@ -1,0 +1,34 @@
+$mobile: 768px;
+$tablet: 1024px;
+
+@mixin responsive($device, $custom-min: null, $custom-max: null) {
+  @if $device == mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (min-width: $mobile + 1) and (max-width: $tablet) {
+      @content;
+    }
+  } @else if $device == desktop {
+    @media (min-width: $tablet + 1) {
+      @content;
+    }
+  } @else if $device == custom {
+    @if $custom-min != null and $custom-max != null {
+      @media (min-width: $custom-min) and (max-width: $custom-max) {
+        @content;
+      }
+    } @else if $custom-min != null {
+      @media (min-width: $custom-min) {
+        @content;
+      }
+    } @else if $custom-max != null {
+      @media (max-width: $custom-max) {
+        @content;
+      }
+    } @else {
+      @warn "Debe especificar al menos un valor de $custom-min o $custom-max para usar el modo custom.";
+    }
+  }
+}

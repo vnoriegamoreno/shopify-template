@@ -1,4 +1,4 @@
-<header class="tennis-bg">
+<header id="header-md">
   <img src="{{ 'tennis-ball.png' | asset_url }}" alt="Tennis ball">
   <div class="right-border"></div>
   <nav class="nav-menu">
@@ -16,3 +16,46 @@
     </ul>
   </nav>
 </header>
+
+<header id="header-sm">
+  <img src="{{ 'tennis-ball.png' | asset_url }}" alt="Tennis ball" id="menu-toggle">
+  <div class="modal"  id="mobile-menu">
+    <nav class="nav-menu">
+      <ul>
+        <li><a class="active-menu" href="#">Inicio</a></li>
+        <li><a href="#">Acerca de nosotros</a></li>
+        <li><a href="#">Historia</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <nav class="locales-menu">
+      <ul>
+        <li><a href="#">ES</a></li>
+        <li><a href="#">EN</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('menu-open');
+        document.body.style.overflow = mobileMenu.classList.contains('menu-open') ? 'hidden' : '';
+      });
+    }
+  });
+
+  function switchLanguage(locale) {
+    const form = document.querySelector('form[action*="/localization"]');
+    const select = form.querySelector('select[name="locale_code"]');
+    if (select) {
+      select.value = locale;
+      form.submit();
+    }
+  }
+</script>
