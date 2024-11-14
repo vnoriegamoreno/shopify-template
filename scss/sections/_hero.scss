@@ -5,13 +5,22 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   height: 100vh;
   position: absolute;
+  top: 0;
   width: 100%;
+
+  &::before {
+    content: '';
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+  }
 
   .grid-layout {
     display: grid;
-    height: 100%;
-    grid-template-rows: 225px minmax(auto, max-content) auto;
     grid-template-columns: 173px auto;
+    grid-template-rows: 225px minmax(auto, max-content) auto;
+    height: 100%;
+    position: relative;
 
     .title {
       color: var(--theme-color-primary);
