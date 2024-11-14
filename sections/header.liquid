@@ -18,7 +18,9 @@
 </header>
 
 <header id="header-sm">
-  <img src="{{ 'tennis-ball.png' | asset_url }}" alt="Tennis ball" id="menu-toggle">
+  <div class="hamburger-wrapper">
+    {% render 'icon-hamburger' %}
+  </div>
   <div class="modal"  id="mobile-menu">
     <nav class="nav-menu">
       <ul>

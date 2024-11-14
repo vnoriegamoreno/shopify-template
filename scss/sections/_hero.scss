@@ -7,7 +7,10 @@
   height: 100vh;
   position: absolute;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 800px;
 
   &::before {
     content: '';
@@ -38,7 +41,7 @@
       width: 709px;
 
       strong {
-        color: var(--theme-color-secondary);
+        color: var(--theme-color-tertiary);
         font-weight: 800;
       }
     }
@@ -60,6 +63,7 @@
         text-decoration: none;
         text-transform: uppercase;
         top: 30px;
+        transition: all 0.3s ease;
 
         .svg-left-arrow {
           height: 23px;
@@ -67,6 +71,16 @@
           top: 12.5px;
           width: 23px;
           right: 22px;
+          transition: color 0.3s ease;
+        }
+
+        &:hover {
+          border: solid 1px var(--theme-color-tertiary);
+          color:var(--theme-color-tertiary);
+
+          .svg-left-arrow {
+            color: var(--theme-color-tertiary);
+          }
         }
       }
     }
@@ -83,8 +97,13 @@
   }
 
   @include responsive(mobile) {
+    $top: 65px;
+    height: calc(100vh + $top);
+    top: $top;
+    min-height: initial;
+
     .grid-layout {
-      grid-template-columns: 25px auto 25px;
+      grid-template-columns: 36px auto 5px;
 
       .title {
         width: 100%;
