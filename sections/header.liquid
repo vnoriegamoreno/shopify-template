@@ -1,7 +1,7 @@
-<header id="header-md">
-  <img src="{{ 'tennis-ball.png' | asset_url }}" alt="Tennis ball">
-  <div class="right-border"></div>
-  <nav class="nav-menu">
+<header id="desktop-header" aria-label="Navegación principal">
+  <img src="{{ 'tennis-ball.png' | asset_url }}" alt="Tennis ball logo">
+  <div class="vertical-divider" aria-hidden="true"></div>
+  <nav class="nav-menu" aria-label="Menú principal">
     <ul>
       <li><a class="active-menu" href="#">Inicio</a></li>
       <li><a href="#">Acerca de nosotros</a></li>
@@ -9,20 +9,20 @@
       <li><a href="#">Contacto</a></li>
     </ul>
   </nav>
-  <nav class="locales-menu">
+  <nav class="language-nav" aria-label="Selección de idioma">
     <ul>
-      <li><a href="#">ES</a></li>
-      <li><a href="#">EN</a></li>
+      <li><a href="#" hreflang="es" lang="es">ES</a></li>
+      <li><a href="#" hreflang="en" lang="en">EN</a></li>
     </ul>
   </nav>
 </header>
 
-<header id="header-sm">
-  <div class="hamburger-wrapper">
+<header id="header-sm" aria-label="Navegación principal">
+  <div class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
     {% render 'icon-hamburger' %}
   </div>
-  <div class="modal"  id="mobile-menu">
-    <nav class="nav-menu">
+  <div class="modal" id="mobile-menu">
+    <nav class="nav-menu" aria-label="Menú principal">
       <ul>
         <li><a class="active-menu" href="#">Inicio</a></li>
         <li><a href="#">Acerca de nosotros</a></li>
@@ -30,10 +30,10 @@
         <li><a href="#">Contacto</a></li>
       </ul>
     </nav>
-    <nav class="locales-menu">
+    <nav class="language-nav" aria-label="Selección de idioma">
       <ul>
-        <li><a href="#">ES</a></li>
-        <li><a href="#">EN</a></li>
+        <li><a href="#" hreflang="es" lang="es">ES</a></li>
+        <li><a href="#" hreflang="en" lang="en">EN</a></li>
       </ul>
     </nav>
   </div>
@@ -43,7 +43,6 @@
   document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    
     if (menuToggle && mobileMenu) {
       menuToggle.addEventListener('click', function() {
         mobileMenu.classList.toggle('menu-open');
@@ -51,13 +50,4 @@
       });
     }
   });
-
-  function switchLanguage(locale) {
-    const form = document.querySelector('form[action*="/localization"]');
-    const select = form.querySelector('select[name="locale_code"]');
-    if (select) {
-      select.value = locale;
-      form.submit();
-    }
-  }
 </script>
