@@ -3,6 +3,9 @@
 @import "./base/base";
 @import "./base/theme-vars";
 
+// mixins
+@import "./mixins/buttons";
+
 // sections
 @import "./sections/header";
 @import "./sections/hero";

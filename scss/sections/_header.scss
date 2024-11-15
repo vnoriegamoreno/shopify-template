@@ -69,7 +69,7 @@ header#desktop-header {
   display: flex;
   flex-direction: row;
   left: 0;
-  position: relative;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 10;
@@ -77,17 +77,6 @@ header#desktop-header {
   img {
     @include tennis-img();
     margin: 25px 32px 0 36px;
-  }
-
-  .vertical-divider {
-    background: var(--theme-color-primary);
-    display: inline-block;
-    height: 100vh;
-    left: calc(37px + 32px + 34px);
-    position: fixed;
-    top: 0px;
-    width: 2px;
-    z-index: 9;
   }
 
   .nav-menu {
@@ -111,10 +100,6 @@ header#desktop-header {
   @include responsive(tablet) {
     img {
       margin: 25px 20px 0 20px;
-    }
-
-    .vertical-divider {
-      left: calc(37px + 20px + 24px);
     }
 
     .nav-menu {

@@ -1,0 +1,100 @@
+.products-section {
+  background-color: var(--color-white);
+  
+  .container {
+    margin: 0;
+    padding: 0;
+
+    .products-header {
+      background-color: var(--theme-color-variant-1);
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 67px;
+
+      .column-empty {
+        flex-basis: 256px;
+      }
+
+      .tag {
+        color: var(--theme-color-tertiary);
+        flex-basis: 174px;
+        font-size: 15px;
+        font-stretch: normal;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 1.87px;
+        margin-top: 104px;
+        margin-right: 56px;
+        text-align: right;
+        text-transform: uppercase;
+        height: 33px;
+      }
+
+      .content {
+        flex: 1;
+
+        .title {
+          color: var(--theme-color-variant-2);
+          font-size: 50px;
+          font-stretch: normal;
+          font-style: normal;
+          font-weight: normal;
+          height: 151px;
+          letter-spacing: -0.06px;
+          line-height: 1.14;
+          margin-top: 76px;
+          margin: 76px 0 0 0;
+          width: 555px;
+        }
+
+        .description {
+          display: flex;
+          padding-top: 15px;
+
+          p {
+            color: var(--theme-color-variant-3);
+            font-size: 18px;
+            font-stretch: normal;
+            font-style: normal;
+            font-weight: normal;
+            height: 87px;
+            letter-spacing: 0.51px;
+            line-height: 1.78;
+            margin: 0;
+            width: 393px;
+          }
+
+          div {
+            flex: 1;
+
+            .btn-outline {
+              @include button-component(var(--theme-color-variant-3));
+              top: 16px;
+              width: 125px;
+              height: 23px;
+              margin: 0 10px 0 162px;
+              font-size: 13px;
+              font-weight: 500;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 2.15;
+              letter-spacing: 1.01px;
+              color: var(--theme-color-variant-4);
+
+              .svg-left-arrow {
+                top: 16px;
+              }
+            }
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+

@@ -1,0 +1,31 @@
+@mixin button-component($color: var(--theme-color-primary)) {
+  border-radius: 26.5px;
+  border: solid 1px $color;
+  color: $color;
+  display: inline-block;
+  font-size: 16px;
+  padding: 15px 50px 15px 30px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  top: 30px;
+  transition: all 0.3s ease;
+
+  .svg-left-arrow {
+    height: 23px;
+    position: absolute;
+    top: 12.5px;
+    width: 23px;
+    right: 22px;
+    transition: color 0.3s ease;
+  }
+
+  &:hover {
+    border: solid 1px var(--theme-color-tertiary);
+    color:var(--theme-color-tertiary);
+
+    .svg-left-arrow {
+      color: var(--theme-color-tertiary);
+    }
+  }
+}

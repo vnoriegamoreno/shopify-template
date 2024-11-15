@@ -5,18 +5,31 @@
   background-size: cover;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   height: 100vh;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   min-height: 785px;
+  background-attachment: fixed;
 
   &::before {
     content: '';
     inset: 0;
     position: absolute;
     z-index: -1;
+  }
+
+  .vertical-divider {
+    background: var(--theme-color-primary);
+    display: inline-block;
+    height: 100vh;
+    left: calc(37px + 32px + 34px);
+    position: absolute;
+    top: 0px;
+    width: 2px;
+    z-index: 9;
+    min-height: 785px;
   }
 
   .grid-layout {
@@ -87,6 +100,10 @@
   }
 
   @include responsive(tablet) {
+    .vertical-divider {
+      left: calc(37px + 20px + 24px);
+    }
+
     .grid-layout {
       grid-template-columns: calc(576px - 450px) auto;
 
@@ -101,6 +118,8 @@
     height: calc(100vh + $top);
     top: $top;
     min-height: initial;
+
+    .vertical-divider { display: none; }
 
     .grid-layout {
       grid-template-columns: 36px auto 5px;
