@@ -516,9 +516,10 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
 }
 .products-section .container .products-showcase .product-card .product-image {
   height: 100%;
+  margin-left: 3px;
+  overflow: hidden;
   position: relative;
   width: 100%;
-  margin-left: 3px;
 }
 .products-section .container .products-showcase .product-card .product-image img {
   height: 100%;
@@ -527,10 +528,12 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
 }
 .products-section .container .products-showcase .product-card .product-content {
   color: var(--theme-color-primary);
-  left: 200px;
-  margin-right: 71px;
+  height: calc(100% - 38px);
+  left: 39%;
   position: absolute;
+  right: 71px;
   top: 38px;
+  width: 61%;
   z-index: 1;
 }
 .products-section .container .products-showcase .product-card .product-content h3 {
@@ -663,4 +666,42 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
 }
 .products-section .container .products-showcase .product-grid .product-card img {
   width: 100%;
+}
+@media (max-width: 1291px) {
+  .products-section .container .products-showcase .product-card {
+    flex: 100%;
+  }
+  .products-section .container .products-showcase .product-card .product-content {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .products-section .container .products-showcase .product-card .product-content h3 {
+    width: 100%;
+  }
+  .products-section .container .products-showcase .product-card .product-content p {
+    width: 80%;
+    margin: auto;
+  }
+  .products-section .container .products-showcase .product-card .product-content .controls {
+    left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .products-section .container .products-showcase {
+    flex-direction: column;
+  }
+  .products-section .container .products-showcase .product-card {
+    width: 100%;
+    max-width: none;
+  }
+  .products-section .container .products-showcase .product-card .product-content {
+    height: auto;
+  }
+  .products-section .container .products-showcase .product-grid {
+    gap: 0;
+    flex-direction: column;
+    margin-left: 0;
+    padding-top: 0;
+  }
 }
