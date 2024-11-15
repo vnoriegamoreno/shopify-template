@@ -625,3 +625,42 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
 .products-section .container .products-showcase .product-card .product-content .controls .control:hover .next-arrow {
   border-color: transparent transparent transparent var(--theme-color-primary);
 }
+.products-section .container .products-showcase .product-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 31px;
+  margin-left: 52px;
+  overflow-x: hidden;
+  position: relative;
+  padding-top: 60px;
+}
+.products-section .container .products-showcase .product-grid .product-card {
+  height: 344px;
+  position: relative;
+  width: 288px;
+}
+.products-section .container .products-showcase .product-grid .product-card .number {
+  background-color: var(--theme-color-tertiary);
+  border-radius: 50%;
+  height: 39px;
+  left: 17px;
+  position: absolute;
+  text-align: center;
+  top: 11px;
+  width: 39px;
+}
+.products-section .container .products-showcase .product-grid .product-card .number span {
+  color: var(--theme-color-primary);
+  font-family: HelveticaNeue;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 2.11px;
+  line-height: 1.76;
+  position: relative;
+  text-align: center;
+  top: 3px;
+}
+.products-section .container .products-showcase .product-grid .product-card img {
+  width: 100%;
+}
