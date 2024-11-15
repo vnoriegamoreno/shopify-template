@@ -22,31 +22,25 @@
     <div class="products-showcase">
       <article class="product-card featured">
         <div class="product-image">
-          <img src="tennis-ball.jpg" alt="Pelota de tennis sobre superficie verde">
+          <img src="{{ 'ball-color-court.png' | asset_url }}" alt="Pelota de tennis sobre superficie verde">
         </div>
         <div class="product-content">
-          <h3>
-            Nuestras<br>
-            Raquetas
-          </h3>
+          <h3>Nuestras<br><strong>Raquetas</strong></h3>
           <p>Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
-        </div>
-        <div class="controls">
-          <button class="prev" aria-label="Anterior producto">
-            <svg aria-hidden="true">
-              ...
-            </svg>
-          </button>
-          <button class="next" aria-label="Siguiente producto">
-            <svg aria-hidden="true">
-              ...
-            </svg>
-          </button>
-        </div>
-        <div class="indicators">
-          <button class="indicator active" aria-label="Ir a slide 1"></button>
-          <button class="indicator" aria-label="Ir a slide 2"></button>
-          <button class="indicator" aria-label="Ir a slide 3"></button>
+          <div class="indicators">
+            <button class="indicator active" aria-label="Ir a slide 1"></button>
+            <button class="indicator" aria-label="Ir a slide 2"></button>
+            <button class="indicator" aria-label="Ir a slide 3"></button>
+            <button class="indicator" aria-label="Ir a slide 4"></button>
+          </div>
+          <div class="controls">
+            <button class="control prev" aria-label="Anterior producto">
+              <span class="prev-arrow"></span>
+            </button>
+            <button class="control next" aria-label="Siguiente producto">
+              <span class="next-arrow"></span>
+            </button>
+          </div>
         </div>
       </article>
 

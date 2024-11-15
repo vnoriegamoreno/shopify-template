@@ -503,3 +503,125 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
 .products-section .container .products-header .content .description div .btn-outline .svg-left-arrow {
   top: 16px;
 }
+.products-section .container .products-showcase {
+  display: flex;
+  flex-direction: row;
+}
+.products-section .container .products-showcase .product-card {
+  flex-basis: 530px;
+  height: 468px;
+  max-width: 530px;
+  overflow: hidden;
+  position: relative;
+}
+.products-section .container .products-showcase .product-card .product-image {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  margin-left: 3px;
+}
+.products-section .container .products-showcase .product-card .product-image img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.products-section .container .products-showcase .product-card .product-content {
+  color: var(--theme-color-primary);
+  left: 200px;
+  margin-right: 71px;
+  position: absolute;
+  top: 38px;
+  z-index: 1;
+}
+.products-section .container .products-showcase .product-card .product-content h3 {
+  font-size: 50px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  height: 151px;
+  letter-spacing: -0.06px;
+  line-height: 1.28;
+  margin: 0;
+  width: 259px;
+}
+.products-section .container .products-showcase .product-card .product-content p {
+  font-size: 18px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  height: 107px;
+  letter-spacing: 0.51px;
+  line-height: 1.67;
+  margin: 0;
+  width: 303px;
+}
+.products-section .container .products-showcase .product-card .product-content .indicators {
+  height: auto;
+}
+.products-section .container .products-showcase .product-card .product-content .indicators .indicator {
+  background-color: var(--theme-color-primary);
+  border-radius: 50%;
+  border: 0px;
+  height: 7.8px;
+  padding: 0;
+  width: 8px;
+  margin-right: 19px;
+  cursor: pointer;
+}
+.products-section .container .products-showcase .product-card .product-content .indicators .indicator.active, .products-section .container .products-showcase .product-card .product-content .indicators .indicator:hover {
+  background-color: var(--theme-color-tertiary);
+}
+.products-section .container .products-showcase .product-card .product-content .controls {
+  left: -22.5px;
+  position: relative;
+  top: 35px;
+}
+.products-section .container .products-showcase .product-card .product-content .controls .control {
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid var(--theme-color-primary);
+  cursor: pointer;
+  height: 54px;
+  margin-right: 19px;
+  padding: 0;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 54px;
+}
+.products-section .container .products-showcase .product-card .product-content .controls .control.next {
+  background-color: var(--theme-color-tertiary);
+  border-color: var(--theme-color-tertiary);
+}
+.products-section .container .products-showcase .product-card .product-content .controls .control .prev-arrow,
+.products-section .container .products-showcase .product-card .product-content .controls .control .next-arrow {
+  border-style: solid;
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+}
+.products-section .container .products-showcase .product-card .product-content .controls .control .prev-arrow {
+  border-color: transparent var(--theme-color-primary) transparent transparent;
+  border-width: 8px 12px 8px 0;
+  margin-left: -2px;
+}
+.products-section .container .products-showcase .product-card .product-content .controls .control .next-arrow {
+  border-color: transparent transparent transparent var(--theme-color-primary);
+  border-width: 8px 0 8px 12px;
+  margin-left: 2px;
+}
+.products-section .container .products-showcase .product-card .product-content .controls .control.next .next-arrow {
+  border-color: transparent transparent transparent var(--theme-color-primary);
+}
+.products-section .container .products-showcase .product-card .product-content .controls .control:hover {
+  background-color: var(--theme-color-tertiary);
+  border-color: var(--theme-color-tertiary);
+}
+.products-section .container .products-showcase .product-card .product-content .controls .control:hover .prev-arrow {
+  border-color: transparent var(--theme-color-primary) transparent transparent;
+}
+.products-section .container .products-showcase .product-card .product-content .controls .control:hover .next-arrow {
+  border-color: transparent transparent transparent var(--theme-color-primary);
+}
