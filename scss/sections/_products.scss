@@ -87,7 +87,58 @@
             }
           }
         }
+      }
 
+      @include responsive(tablet) {
+        .column-empty { flex-basis: 10%; }
+        .content {
+          .description {
+            flex-direction: column;
+
+            div {
+              flex: 1;
+              margin-top: 16px;
+
+              .btn-outline {
+                margin: 0;
+                top: 0;
+              }
+            }
+          }
+        }
+      }
+      
+      @include responsive(mobile) {
+        flex-direction: column;
+        text-align: center;
+        
+        .column-empty { display: none; }
+        .tag {
+          flex: 1;
+          width: 100%;
+          text-align: center;
+        }
+
+        .content {
+          .title { width: 100%; }
+          .description {
+            flex-direction: column;
+
+            p {
+              width: 80%;
+              margin: auto;
+            }
+
+            div {
+              flex: 1;
+              margin-top: 16px;
+              .btn-outline {
+                margin: 0;
+                top: 0;
+              }
+            }
+          }
+        }
       }
 
     }

@@ -179,7 +179,7 @@ header#header-sm {
     border-bottom: 4px solid var(--theme-color-tertiary);
     display: block;
     padding: 10px 36px;
-    width: calc(100vh - ((36px * 2) + 4px));
+    width: 100%;
 
     svg.hamburget-menu {
       @include tennis-img();
