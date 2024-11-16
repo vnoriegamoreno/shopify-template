@@ -1,8 +1,45 @@
-<section class="athlete-banner" aria-label="Tennis player in action">
+<section class="athlete-banner" aria-label="{{ section.settings.banner_aria_label }}">
   <div class="banner-image-container">
-    <img 
-      src="{{ 'banner-athlete.jpg' | asset_url }}" 
-      alt="Professional tennis player practicing on an outdoor court during sunset"
+    <img
+      src="{{ section.settings.banner_image | default: 'banner-athlete.jpg' | asset_url }}"
+      alt="{{ section.settings.banner_image_alt }}"
+      loading="lazy"
     >
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Banner Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banner Content"
+    },
+    {
+      "type": "text",
+      "id": "banner_aria_label",
+      "label": "Banner Aria Label",
+      "default": "Tennis player in action"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image",
+      "info": "Recommended size: 2000px x 586px"
+    },
+    {
+      "type": "text",
+      "id": "banner_image_alt",
+      "label": "Banner Image Alt Text",
+      "default": "Professional tennis player practicing on an outdoor court during sunset"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Section",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
