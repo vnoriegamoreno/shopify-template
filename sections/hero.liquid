@@ -1,17 +1,67 @@
-{% assign about_us_link = linklists["main-menu"].links[1] %}
-
 <main>
-  <section class="hero-container" aria-label="Banner principal">
+  <section class="hero-container" aria-label="{{ section.settings.banner_label }}">
     <div class="hero">
       <div class="vertical-divider" aria-hidden="true"></div>
       <div class="grid-layout">
-        <h1 class="title">Las mejores raquetas para jugar <strong>Tennis</strong></h1>
+        <h1 class="title">
+          {{ section.settings.title_text }} 
+          <strong>{{ section.settings.title_highlight }}</strong>
+        </h1>
         <div class="aboutus-btn">
-          <a href="{{ about_us_link.url }}" aria-label="Ir a sección Acerca de nosotros">
-            {{  about_us_link.title }} {% render 'icon-left-arrow' %}
+          <a href="{{ section.settings.button_link }}" aria-label="{{ section.settings.button_aria_label }}">
+            {{ section.settings.button_text }} {% render 'icon-left-arrow' %}
           </a>
         </div>
       </div>
     </div>
   </section>
 </main>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "banner_label",
+      "label": "Banner Aria Label",
+      "default": "Banner principal"
+    },
+    {
+      "type": "text",
+      "id": "title_text",
+      "label": "Título principal",
+      "default": "Las mejores raquetas para jugar"
+    },
+    {
+      "type": "text",
+      "id": "title_highlight",
+      "label": "Texto destacado del título",
+      "default": "Tennis"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "URL del botón"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto del botón",
+      "default": "Acerca de nosotros"
+    },
+    {
+      "type": "text",
+      "id": "button_aria_label",
+      "label": "Etiqueta aria para el botón",
+      "default": "Ir a sección Acerca de nosotros"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "category": "Hero"
+    }
+  ]
+}
+{% endschema %}
