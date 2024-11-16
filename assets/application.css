@@ -16,6 +16,7 @@ body, html {
   --theme-color-variant-2: #1e2335;
   --theme-color-variant-3: #787878;
   --theme-color-variant-4: #273048;
+  --theme-color-variant-5: #2b3049;
 }
 
 header#desktop-header {
@@ -810,5 +811,80 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   }
   .athlete-banner .banner-image-container img {
     object-position: 25% center;
+  }
+}
+
+.site-footer {
+  background-color: var(--theme-color-tertiary);
+  display: flex;
+  flex-direction: row;
+}
+.site-footer .left-column {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  margin: 0 0 0 74px;
+  padding: 64px 0 0 0;
+}
+.site-footer .footer-nav .footer-menu, .site-footer .footer-nav .social-menu, .site-footer .social-nav .footer-menu, .site-footer .social-nav .social-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-footer .footer-nav .footer-menu li, .site-footer .footer-nav .social-menu li, .site-footer .social-nav .footer-menu li, .site-footer .social-nav .social-menu li {
+  display: inline-block;
+  margin-right: 50px;
+}
+.site-footer .footer-nav .footer-menu li a, .site-footer .footer-nav .social-menu li a, .site-footer .social-nav .footer-menu li a, .site-footer .social-nav .social-menu li a {
+  color: var(--theme-color-variant-5);
+  font-size: 13px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: lighter;
+  letter-spacing: 1.14px;
+  line-height: normal;
+  text-decoration: none;
+}
+.site-footer .footer-nav .footer-menu li a.active, .site-footer .footer-nav .social-menu li a.active, .site-footer .social-nav .footer-menu li a.active, .site-footer .social-nav .social-menu li a.active {
+  font-weight: bold;
+}
+.site-footer .social-nav {
+  margin-top: 13px;
+  margin-bottom: 58px;
+}
+.site-footer .social-nav .social-menu li {
+  margin-right: 12px;
+}
+.site-footer .right-column {
+  flex: 1;
+  text-align: right;
+}
+.site-footer .right-column a {
+  position: relative;
+  right: 63px;
+  top: 77px;
+}
+@media (max-width: 768px) {
+  .site-footer {
+    flex-direction: column;
+  }
+  .site-footer .left-column {
+    flex: 1;
+    padding-bottom: 0;
+  }
+  .site-footer .left-column .footer-nav .footer-menu li {
+    display: block;
+    margin: 0 0 12px 0;
+  }
+  .site-footer .left-column .social-nav {
+    margin-bottom: 13px;
+  }
+  .site-footer .right-column {
+    margin: 12px 0 64px 0;
+    text-align: left;
+  }
+  .site-footer .right-column a {
+    left: 74px;
+    top: 0;
   }
 }
