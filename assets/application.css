@@ -67,14 +67,14 @@ header#desktop-header .nav-menu ul li a {
   transition: color 0.3s ease;
 }
 header#desktop-header .nav-menu ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
   background: var(--theme-color-tertiary);
+  bottom: -5px;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
   transition: width 0.3s ease;
+  width: 0;
 }
 header#desktop-header .nav-menu ul li a:hover {
   color: var(--theme-color-tertiary);
@@ -89,8 +89,8 @@ header#desktop-header .nav-menu ul li a:hover.active-menu::after {
   background: var(--theme-color-primary);
 }
 header#desktop-header .nav-menu ul li a.active-menu::after {
-  width: 17px;
   background: var(--theme-color-primary);
+  width: 17px;
 }
 header#desktop-header .language-nav {
   margin: 45px 94px 0 0;
@@ -123,14 +123,14 @@ header#desktop-header .language-nav ul li a {
   transition: color 0.3s ease;
 }
 header#desktop-header .language-nav ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
   background: var(--theme-color-tertiary);
+  bottom: -5px;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
   transition: width 0.3s ease;
+  width: 0;
 }
 header#desktop-header .language-nav ul li a:hover {
   color: var(--theme-color-tertiary);
@@ -145,8 +145,8 @@ header#desktop-header .language-nav ul li a:hover.active-menu::after {
   background: var(--theme-color-primary);
 }
 header#desktop-header .language-nav ul li a.active-menu::after {
-  width: 17px;
   background: var(--theme-color-primary);
+  width: 17px;
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   header#desktop-header img {
@@ -192,15 +192,15 @@ header#header-sm .modal {
   border-radius: 5px;
   display: none;
   margin: 10px;
-  padding: 50px 0;
   max-width: 50vh;
-  transform: translateY(-10px);
   opacity: 0;
+  padding: 50px 0;
+  transform: translateY(-10px);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 header#header-sm .modal.menu-open {
-  display: block;
   animation: modalShow 0.3s ease forwards;
+  display: block;
 }
 header#header-sm .modal:not(.menu-open) {
   animation: modalHide 0.3s ease forwards;
@@ -222,14 +222,14 @@ header#header-sm .modal .nav-menu ul li a, header#header-sm .modal .language-nav
   transition: all 0.3s ease;
 }
 header#header-sm .modal .nav-menu ul li a::after, header#header-sm .modal .language-nav ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
   background: var(--theme-color-tertiary);
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
   transition: width 0.3s ease;
+  width: 0;
 }
 header#header-sm .modal .nav-menu ul li a:hover:not(.active-menu), header#header-sm .modal .language-nav ul li a:hover:not(.active-menu) {
   color: var(--theme-color-tertiary);
@@ -243,8 +243,8 @@ header#header-sm .modal .nav-menu ul li a.active-menu, header#header-sm .modal .
   transform: translateX(10px);
 }
 header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .modal .language-nav ul li a.active-menu::after {
-  width: 100%;
   background: var(--theme-color-tertiary);
+  width: 100%;
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   header#header-sm#header-sm {
@@ -259,23 +259,23 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
 
 @keyframes modalShow {
   0% {
-    transform: translateY(-20px);
     opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes modalHide {
   0% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
   100% {
-    transform: translateY(-20px);
-    opacity: 0;
     display: none;
+    opacity: 0;
+    transform: translateY(-20px);
   }
 }
 .hero {
@@ -283,13 +283,13 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
+  height: 100vh;
+  left: 0;
   min-height: 785px;
+  position: relative;
+  right: 0;
+  top: 0;
 }
 .hero::before {
   content: "";
@@ -302,11 +302,11 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   display: inline-block;
   height: 100vh;
   left: 103px;
+  min-height: 785px;
   position: absolute;
   top: 0px;
   width: 2px;
   z-index: 9;
-  min-height: 785px;
 }
 .hero .grid-layout {
   display: grid;
@@ -355,10 +355,10 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
 .hero .grid-layout .aboutus-btn a .svg-left-arrow {
   height: 23px;
   position: absolute;
-  top: 12.5px;
-  width: 23px;
   right: 22px;
+  top: 12.5px;
   transition: color 0.3s ease;
+  width: 23px;
 }
 .hero .grid-layout .aboutus-btn a:hover {
   border: solid 1px var(--theme-color-tertiary);
@@ -380,13 +380,13 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
 }
 @media (max-width: 768px) {
   .hero {
-    height: calc(100vh + 65px);
-    top: 65px;
-    min-height: initial;
-    background-size: auto 100%;
     background-position: 65% center;
-    width: 100%;
+    background-size: auto 100%;
+    height: calc(100vh + 65px);
+    min-height: initial;
     overflow: hidden;
+    top: 65px;
+    width: 100%;
   }
   .hero .vertical-divider {
     display: none;
@@ -422,12 +422,12 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   font-stretch: normal;
   font-style: normal;
   font-weight: 500;
+  height: 33px;
   letter-spacing: 1.87px;
-  margin-top: 104px;
   margin-right: 56px;
+  margin-top: 104px;
   text-align: right;
   text-transform: uppercase;
-  height: 33px;
 }
 .products-section .container .products-header .content {
   flex: 1;
@@ -476,25 +476,25 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   text-transform: uppercase;
   top: 30px;
   transition: all 0.3s ease;
-  top: 16px;
-  width: 125px;
-  height: 23px;
-  margin: 0 10px 0 162px;
+  color: var(--theme-color-variant-4);
   font-size: 13px;
-  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.15;
+  font-weight: 500;
+  height: 23px;
   letter-spacing: 1.01px;
-  color: var(--theme-color-variant-4);
+  line-height: 2.15;
+  margin: 0 10px 0 162px;
+  top: 16px;
+  width: 125px;
 }
 .products-section .container .products-header .content .description div .btn-outline .svg-left-arrow {
   height: 23px;
   position: absolute;
-  top: 12.5px;
-  width: 23px;
   right: 22px;
+  top: 12.5px;
   transition: color 0.3s ease;
+  width: 23px;
 }
 .products-section .container .products-header .content .description div .btn-outline:hover {
   border: solid 1px var(--theme-color-tertiary);
@@ -532,9 +532,9 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   }
   .products-section .container .products-header .tag {
     flex: 1;
-    width: 100%;
-    text-align: center;
     margin-right: 0;
+    text-align: center;
+    width: 100%;
   }
   .products-section .container .products-header .content .title {
     height: auto;
@@ -547,8 +547,8 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
     flex-direction: column;
   }
   .products-section .container .products-header .content .description p {
-    width: 80%;
     margin: auto;
+    width: 80%;
   }
   .products-section .container .products-header .content .description div {
     flex: 1;
@@ -622,11 +622,11 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   background-color: var(--theme-color-primary);
   border-radius: 50%;
   border: 0px;
+  cursor: pointer;
   height: 7.8px;
+  margin-right: 19px;
   padding: 0;
   width: 8px;
-  margin-right: 19px;
-  cursor: pointer;
 }
 .products-section .container .products-showcase .product-card .product-content .indicators .indicator.active, .products-section .container .products-showcase .product-card .product-content .indicators .indicator:hover {
   background-color: var(--theme-color-tertiary);
@@ -691,8 +691,8 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   gap: 31px;
   margin-left: 52px;
   overflow-x: scroll;
-  position: relative;
   padding-top: 60px;
+  position: relative;
 }
 .products-section .container .products-showcase .product-grid .product-card {
   height: 344px;
@@ -731,15 +731,15 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   }
   .products-section .container .products-showcase .product-card .product-content {
     left: 0;
-    width: 100%;
     text-align: center;
+    width: 100%;
   }
   .products-section .container .products-showcase .product-card .product-content h3 {
     width: 100%;
   }
   .products-section .container .products-showcase .product-card .product-content p {
-    width: 80%;
     margin: auto;
+    width: 80%;
   }
   .products-section .container .products-showcase .product-card .product-content .controls {
     left: 0;
@@ -757,8 +757,8 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
     margin-top: 15px;
   }
   .products-section .container .products-showcase .product-card .product-content .controls {
-    top: 0;
     margin-top: 15px;
+    top: 0;
   }
 }
 @media (max-width: 768px) {
@@ -766,8 +766,8 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
     flex-direction: column;
   }
   .products-section .container .products-showcase .product-card {
-    width: 100%;
     max-width: none;
+    width: 100%;
   }
   .products-section .container .products-showcase .product-card .product-content {
     height: auto;
@@ -780,22 +780,22 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
 }
 
 .athlete-banner {
-  position: relative;
-  width: 100%;
   height: 586px;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 .athlete-banner .banner-image-container {
-  position: absolute;
-  inset: 0;
-  width: 100%;
   height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
 }
 .athlete-banner .banner-image-container img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 65% center;
+  width: 100%;
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .athlete-banner {
