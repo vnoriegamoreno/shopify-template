@@ -1,26 +1,28 @@
-{% assign history_link = linklists["main-menu"].links[2] %}
-
 <section class="products-section" aria-labelledby="products-title">
   <div class="container">
     <header class="products-header">
       <div class="column-empty"></div>
-      <span class="tag">TENNIS</span>
+      <span class="tag">
+        {{ section.settings.tag_text }}
+      </span>
 
       <div class="content">
         <h2 id="products-title" class="title">
-          Raquetas.Accesorios.<br>
-          Pelotas.
+          {{ section.settings.title_text }}
+          {%- if section.settings.enable_line_break -%}<br>{%- endif -%}
+          {{ section.settings.title_text_second_line }}
         </h2>
 
         <div class="description">
-          <p>Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
+          <p>{{ section.settings.description_text }}</p>
           <div>
             <a
-              href="{{ history_link.url }}"
+              href="{{ section.settings.history_link }}"
               class="btn-outline"
-              aria-label="Ir a la sección de historia"
+              aria-label="{{ section.settings.history_button_aria }}"
             >
-              {{ history_link.title }} {% render 'icon-left-arrow' %}
+              {{ section.settings.history_button_text }}
+              {% render 'icon-left-arrow' %}
             </a>
           </div>
         </div>
@@ -33,8 +35,11 @@
           <img src="{{ 'ball-color-court.png' | asset_url }}" alt="Pelota de tennis sobre superficie verde">
         </div>
         <div class="product-content">
-          <h3>Nuestras <br><strong>Raquetas</strong></h3>
-          <p>Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
+          <h3>
+            {{ section.settings.featured_title }}
+            <strong>{{ section.settings.featured_title_highlight }}</strong>
+          </h3>
+          <p>{{ section.settings.featured_description }}</p>
           <div class="indicators">
             <button class="indicator active" aria-label="Ir a slide 1"></button>
             <button class="indicator" aria-label="Ir a slide 2"></button>
@@ -75,3 +80,94 @@
     </div>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Products Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Content"
+    },
+    {
+      "type": "text",
+      "id": "tag_text",
+      "label": "Tag Text",
+      "default": "TENNIS"
+    },
+    {
+      "type": "text",
+      "id": "title_text",
+      "label": "Title First Line",
+      "default": "Raquetas.Accesorios."
+    },
+    {
+      "type": "text",
+      "id": "title_text_second_line",
+      "label": "Title Second Line",
+      "default": "Pelotas."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_line_break",
+      "label": "Enable Title Line Break",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "description_text",
+      "label": "Description Text",
+      "default": "Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional."
+    },
+    {
+      "type": "header",
+      "content": "History Button"
+    },
+    {
+      "type": "url",
+      "id": "history_link",
+      "label": "History Link URL"
+    },
+    {
+      "type": "text",
+      "id": "history_button_text",
+      "label": "Button Text",
+      "default": "HISTORIA"
+    },
+    {
+      "type": "text",
+      "id": "history_button_aria",
+      "label": "Button Aria Label",
+      "default": "Ir a la sección de historia"
+    },
+    {
+      "type": "header",
+      "content": "Featured Product Card"
+    },
+    {
+      "type": "text",
+      "id": "featured_title",
+      "label": "Featured Title",
+      "default": "Nuestras"
+    },
+    {
+      "type": "text",
+      "id": "featured_title_highlight",
+      "label": "Featured Title Highlight",
+      "default": "Raquetas"
+    },
+    {
+      "type": "textarea",
+      "id": "featured_description",
+      "label": "Featured Card Description",
+      "default": "Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products Section",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}
