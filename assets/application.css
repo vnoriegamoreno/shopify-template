@@ -531,8 +531,12 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
     flex: 1;
     width: 100%;
     text-align: center;
+    margin-right: 0;
   }
   .products-section .container .products-header .content .title {
+    font-size: 2rem;
+    height: auto;
+    margin: 17px auto;
     width: 100%;
   }
   .products-section .container .products-header .content .description {
