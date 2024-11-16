@@ -282,7 +282,6 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   height: 100vh;
   position: relative;
   top: 0;
@@ -290,7 +289,6 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   right: 0;
   bottom: 0;
   min-height: 785px;
-  background-attachment: fixed;
 }
 .hero::before {
   content: "";
@@ -384,6 +382,10 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
     height: calc(100vh + 65px);
     top: 65px;
     min-height: initial;
+    background-size: auto 100%;
+    background-position: 65% center;
+    width: 100%;
+    overflow: hidden;
   }
   .hero .vertical-divider {
     display: none;
@@ -534,10 +536,11 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
     margin-right: 0;
   }
   .products-section .container .products-header .content .title {
-    font-size: 2rem;
     height: auto;
     margin: 17px auto;
+    white-space: normal;
     width: 100%;
+    word-break: break-word;
   }
   .products-section .container .products-header .content .description {
     flex-direction: column;
@@ -548,7 +551,7 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   }
   .products-section .container .products-header .content .description div {
     flex: 1;
-    margin-top: 16px;
+    margin-top: 32px;
   }
   .products-section .container .products-header .content .description div .btn-outline {
     margin: 0;
@@ -685,12 +688,13 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
   flex-direction: row;
   gap: 31px;
   margin-left: 52px;
-  overflow-x: hidden;
+  overflow-x: scroll;
   position: relative;
   padding-top: 60px;
 }
 .products-section .container .products-showcase .product-grid .product-card {
   height: 344px;
+  min-width: 288px;
   position: relative;
   width: 288px;
 }
@@ -751,9 +755,7 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
     height: auto;
   }
   .products-section .container .products-showcase .product-grid {
-    gap: 0;
-    flex-direction: column;
-    margin-left: 0;
-    padding-top: 0;
+    flex-direction: row;
+    margin: auto 10px;
   }
 }
