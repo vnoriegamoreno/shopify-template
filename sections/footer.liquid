@@ -20,31 +20,68 @@
 
     <nav class="social-nav" aria-label="Redes sociales">
       <ul class="social-menu">
-        <li>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en LinkedIn">
-            <img src="{{ 'icon-linkedin.svg' | asset_url }}" alt="" aria-hidden="true" width="31" height="31">
-          </a>
-        </li>
-        <li>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Veo">
-            <img src="{{ 'icon-vimeo.svg' | asset_url }}" alt="" aria-hidden="true" width="31" height="31">
-          </a>
-        </li>
-        <li>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram">
-            <img src="{{ 'icon-instagram.svg' | asset_url }}" alt="" aria-hidden="true" width="31" height="31">
-          </a>
-        </li>
-        <li>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Twitter">
-            <img src="{{ 'icon-twitter.svg' | asset_url }}" alt="" aria-hidden="true" width="31" height="31">
-          </a>
-        </li>
-        <li>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook">
-            <img src="{{ 'icon-facebook.svg' | asset_url }}" alt="" aria-hidden="true" width="31" height="31">
-          </a>
-        </li>
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'social_icon' %}
+              {% assign platform = block.settings.social_platform %}
+              {% if block.settings.social_icon_image != blank %}
+                {% assign icon_url = block.settings.social_icon_image | img_url: '31x31' %}
+              {% else %}
+                {% case platform %}
+                  {% when 'linkedin' %}
+                    {% assign default_icon = 'icon-linkedin.svg' %}
+                  {% when 'vimeo' %}
+                    {% assign default_icon = 'icon-vimeo.svg' %}
+                  {% when 'instagram' %}
+                    {% assign default_icon = 'icon-instagram.svg' %}
+                  {% when 'twitter' %}
+                    {% assign default_icon = 'icon-twitter.svg' %}
+                  {% when 'facebook' %}
+                    {% assign default_icon = 'icon-facebook.svg' %}
+                  {% else %}
+                    {% assign default_icon = 'default-icon.svg' %}
+                {% endcase %}
+                {% assign icon_url = default_icon | asset_url %}
+              {% endif %}
+              {% assign aria_label = block.settings.social_aria_label %}
+              {% if aria_label == blank %}
+                {% assign platform_label = platform | capitalize %}
+                {% assign aria_label = "Síguenos en " | append: platform_label %}
+              {% endif %}
+              <li>
+                <a href="{{ block.settings.social_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ aria_label }}">
+                  <img src="{{ icon_url }}" alt="" aria-hidden="true" width="31" height="31">
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en LinkedIn">
+              <img src="{{ 'icon-linkedin.svg' | asset_url }}" alt="" aria-hidden="true" width="31" height="31">
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Vimeo">
+              <img src="{{ 'icon-vimeo.svg' | asset_url }}" alt="" aria-hidden="true" width="31" height="31">
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram">
+              <img src="{{ 'icon-instagram.svg' | asset_url }}" alt="" aria-hidden="true" width="31" height="31">
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Twitter">
+              <img src="{{ 'icon-twitter.svg' | asset_url }}" alt="" aria-hidden="true" width="31" height="31">
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook">
+              <img src="{{ 'icon-facebook.svg' | asset_url }}" alt="" aria-hidden="true" width="31" height="31">
+            </a>
+          </li>
+        {% endif %}
       </ul>
     </nav>
   </div>
@@ -52,7 +89,7 @@
   <div class="footer-column right-column">
     <a href="#" aria-label="Inicio - Tennis Logo">
       <img
-        src="{{ 'tennis-ball.png' | asset_url }}"
+        src="{% if section.settings.logo_image != blank %}{{ section.settings.logo_image | img_url: '55x55' }}{% else %}{{ 'tennis-ball.png' | asset_url }}{% endif %}"
         alt="Tennis ball logo"
         width="55"
         height="55"
@@ -63,23 +100,110 @@
 </footer>
 
 {% schema %}
-  {
-    "name": "Footer",
-    "settings": [
-      {
-        "type": "text",
-        "label": "Title",
-        "info": "This is title for the mobile menu window",
-        "id": "mobile_menu_title",
-        "default": "Menu"
-      },
-      {
-        "type": "link_list",
-        "label": "Footer Menu",
-        "info": "Select the menu that want to display in the page",
-        "id": "menu",
-        "default": "main-menu"
-      }
-    ]
-  }
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Title",
+      "info": "This is the title for the mobile menu window",
+      "id": "mobile_menu_title",
+      "default": "Menu"
+    },
+    {
+      "type": "link_list",
+      "label": "Footer Menu",
+      "info": "Select the menu that you want to display on the page",
+      "id": "menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Footer Logo",
+      "info": "Upload an image for the footer logo. If left empty, the default image will be used."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "social_icon",
+      "name": "Social Icon",
+      "settings": [
+        {
+          "type": "select",
+          "id": "social_platform",
+          "label": "Social Media Platform",
+          "options": [
+            { "value": "linkedin", "label": "LinkedIn" },
+            { "value": "vimeo", "label": "Vimeo" },
+            { "value": "instagram", "label": "Instagram" },
+            { "value": "twitter", "label": "Twitter" },
+            { "value": "facebook", "label": "Facebook" },
+            { "value": "custom", "label": "Custom" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "social_icon_image",
+          "label": "Social Icon Image (SVG)",
+          "info": "Upload an SVG icon for the social media platform. If not provided, a default icon will be used for the selected platform."
+        },
+        {
+          "type": "url",
+          "id": "social_url",
+          "label": "Social Media URL"
+        },
+        {
+          "type": "text",
+          "id": "social_aria_label",
+          "label": "Aria Label",
+          "info": "Accessible label for screen readers. If left blank, a default label will be used."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "category": "Footer",
+      "blocks": [
+        {
+          "type": "social_icon",
+          "settings": {
+            "social_platform": "linkedin",
+            "social_url": "#"
+          }
+        },
+        {
+          "type": "social_icon",
+          "settings": {
+            "social_platform": "vimeo",
+            "social_url": "#"
+          }
+        },
+        {
+          "type": "social_icon",
+          "settings": {
+            "social_platform": "instagram",
+            "social_url": "#"
+          }
+        },
+        {
+          "type": "social_icon",
+          "settings": {
+            "social_platform": "twitter",
+            "social_url": "#"
+          }
+        },
+        {
+          "type": "social_icon",
+          "settings": {
+            "social_platform": "facebook",
+            "social_url": "#"
+          }
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
