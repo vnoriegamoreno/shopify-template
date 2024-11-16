@@ -1,3 +1,5 @@
+{% assign history_link = linklists["main-menu"].links[2] %}
+
 <section class="products-section" aria-labelledby="products-title">
   <div class="container">
     <header class="products-header">
@@ -13,7 +15,13 @@
         <div class="description">
           <p>Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
           <div>
-            <a href="#history" class="btn-outline" aria-label="Ir a la sección de historia">Historia {% render 'icon-left-arrow' %}</a>
+            <a
+              href="{{ history_link.url }}"
+              class="btn-outline"
+              aria-label="Ir a la sección de historia"
+            >
+              {{ history_link.title }} {% render 'icon-left-arrow' %}
+            </a>
           </div>
         </div>
       </div>

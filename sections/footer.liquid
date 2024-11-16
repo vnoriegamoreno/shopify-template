@@ -1,12 +1,20 @@
+{% assign menu_linklists = linklists[section.settings.menu].links %}
+
 <footer class="site-footer" aria-label="Información principal y redes sociales">
   <div class="footer-column left-column">
 
     <nav class="footer-nav" aria-label="Enlaces del sitio">
       <ul class="footer-menu">
-        <li><a class="active" href="/" aria-current="page">Inicio</a></li>
-        <li><a href="/nosotros">Acerca de nosotros</a></li>
-        <li><a href="/historia">Historia</a></li>
-        <li><a href="/contacto">Contacto</a></li>
+        {% for link in menu_linklists %}
+          <li>
+            <a
+              class="{% if link.active %}active{% endif %}"
+              href="{{ link.url }}"
+            >
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
 
@@ -52,5 +60,26 @@
       >
     </a>
   </div>
-
 </footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Title",
+        "info": "This is title for the mobile menu window",
+        "id": "mobile_menu_title",
+        "default": "Menu"
+      },
+      {
+        "type": "link_list",
+        "label": "Footer Menu",
+        "info": "Select the menu that want to display in the page",
+        "id": "menu",
+        "default": "main-menu"
+      }
+    ]
+  }
+{% endschema %}

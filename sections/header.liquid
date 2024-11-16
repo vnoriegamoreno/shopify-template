@@ -1,11 +1,19 @@
+{% assign menu_linklists = linklists[section.settings.menu].links %}
+
 <header id="desktop-header" aria-label="Navegación principal">
   <img src="{{ 'tennis-ball.png' | asset_url }}" alt="Tennis ball logo">
   <nav class="nav-menu" aria-label="Menú principal">
     <ul>
-      <li><a class="active-menu" href="#">Inicio</a></li>
-      <li><a href="#">Acerca de nosotros</a></li>
-      <li><a href="#">Historia</a></li>
-      <li><a href="#">Contacto</a></li>
+      {% for link in menu_linklists %}
+        <li>
+          <a
+            class="{% if link.active %}active-menu{% endif %}"
+            href="{{ link.url }}"
+          >
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
     </ul>
   </nav>
   <nav class="language-nav" aria-label="Selección de idioma">
@@ -23,10 +31,16 @@
   <div class="modal" id="mobile-menu">
     <nav class="nav-menu" aria-label="Menú principal">
       <ul>
-        <li><a class="active-menu" href="#">Inicio</a></li>
-        <li><a href="#">Acerca de nosotros</a></li>
-        <li><a href="#">Historia</a></li>
-        <li><a href="#">Contacto</a></li>
+        {% for link in menu_linklists %}
+          <li>
+            <a
+              class="{% if link.active %}active-menu{% endif %}"
+              href="{{ link.url }}"
+            >
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
     <nav class="language-nav" aria-label="Selección de idioma">
@@ -38,15 +52,24 @@
   </div>
 </header>
 
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', function() {
-        mobileMenu.classList.toggle('menu-open');
-        document.body.style.overflow = mobileMenu.classList.contains('menu-open') ? 'hidden' : '';
-      });
-    }
-  });
-</script>
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Title",
+        "info": "This is title for the mobile menu window",
+        "id": "mobile_menu_title",
+        "default": "Menu"
+      },
+      {
+        "type": "link_list",
+        "label": "Header Menu",
+        "info": "Select the menu that want to display in the page",
+        "id": "menu",
+        "default": "main-menu"
+      }
+    ]
+  }
+{% endschema %}
