@@ -759,3 +759,38 @@ header#header-sm .modal .nav-menu ul li a.active-menu::after, header#header-sm .
     margin: auto 10px;
   }
 }
+
+.athlete-banner {
+  position: relative;
+  width: 100%;
+  height: 586px;
+  overflow: hidden;
+}
+.athlete-banner .banner-image-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.athlete-banner .banner-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .athlete-banner {
+    height: 450px;
+  }
+  .athlete-banner .banner-image-container img {
+    object-position: 60% center;
+  }
+}
+@media (max-width: 768px) {
+  .athlete-banner {
+    height: 350px;
+  }
+  .athlete-banner .banner-image-container img {
+    object-position: 25% center;
+  }
+}
